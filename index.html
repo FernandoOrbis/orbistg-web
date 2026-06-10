@@ -862,9 +862,10 @@
     btn.disabled = true;
 
     const formData = new FormData(form);
+    formData.append('access_key', '7fd4f663-8430-4450-b9e7-6295cb701d02');
 
     try {
-      const res = await fetch('https://formspree.io/f/xzdqapag', {
+      const res = await fetch('https://api.web3forms.com/submit', {
         method: 'POST',
         body: formData,
         headers: { 'Accept': 'application/json' }
