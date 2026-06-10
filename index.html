@@ -1,0 +1,888 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Orbis Talent Group — Trabaja en España con contrato real</title>
+  <meta name="description" content="Agencia de colocación internacional. Conectamos trabajadores de Colombia, Perú, Ecuador y Bolivia con empresas españolas. Sin coste para el candidato." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --white:       #F8F8F6;
+      --black:       #111111;
+      --blue:        #1B3A6B;
+      --blue-light:  #EEF2F9;
+      --blue-mid:    #2A5298;
+      --grey:        #6B7280;
+      --grey-light:  #E5E7EB;
+      --border:      #D1D5DB;
+      --font-display: 'Playfair Display', Georgia, serif;
+      --font-body:    'Inter', system-ui, sans-serif;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      background: var(--white);
+      color: var(--black);
+      font-family: var(--font-body);
+      font-size: 16px;
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* ── NAV ── */
+    nav {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: var(--white);
+      border-bottom: 1px solid var(--border);
+      padding: 0 clamp(1.5rem, 5vw, 4rem);
+      height: 64px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .nav-logo {
+      font-family: var(--font-body);
+      font-size: 1rem;
+      font-weight: 600;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      color: var(--black);
+      text-decoration: none;
+    }
+
+    .nav-logo span {
+      color: var(--blue);
+    }
+
+    .nav-cta {
+      background: var(--blue);
+      color: var(--white);
+      border: none;
+      padding: 0.5rem 1.25rem;
+      font-family: var(--font-body);
+      font-size: 0.875rem;
+      font-weight: 500;
+      cursor: pointer;
+      text-decoration: none;
+      transition: background 0.2s;
+    }
+
+    .nav-cta:hover { background: var(--blue-mid); }
+
+    /* ── HERO ── */
+    .hero {
+      padding: clamp(4rem, 10vw, 8rem) clamp(1.5rem, 5vw, 4rem);
+      max-width: 1100px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 4rem;
+      align-items: center;
+    }
+
+    .hero-eyebrow {
+      display: inline-block;
+      font-size: 0.75rem;
+      font-weight: 600;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--blue);
+      border-left: 3px solid var(--blue);
+      padding-left: 0.75rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .hero h1 {
+      font-family: var(--font-display);
+      font-size: clamp(2rem, 4vw, 3rem);
+      line-height: 1.2;
+      color: var(--black);
+      margin-bottom: 1.5rem;
+    }
+
+    .hero h1 em {
+      font-style: normal;
+      color: var(--blue);
+    }
+
+    .hero-sub {
+      font-size: 1.0625rem;
+      color: var(--grey);
+      line-height: 1.7;
+      margin-bottom: 2rem;
+      max-width: 480px;
+    }
+
+    .hero-badges {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      margin-bottom: 2rem;
+    }
+
+    .badge {
+      font-size: 0.75rem;
+      font-weight: 500;
+      color: var(--blue);
+      background: var(--blue-light);
+      padding: 0.35rem 0.75rem;
+      border: 1px solid #C7D4EC;
+    }
+
+    .hero-note {
+      font-size: 0.8125rem;
+      color: var(--grey);
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+    }
+
+    .hero-note::before {
+      content: "✓";
+      color: var(--blue);
+      font-weight: 700;
+    }
+
+    /* ── HERO FORM CARD ── */
+    .hero-form-card {
+      background: var(--white);
+      border: 1px solid var(--border);
+      padding: 2rem;
+      box-shadow: 0 4px 24px rgba(27, 58, 107, 0.08);
+    }
+
+    .form-card-title {
+      font-size: 1rem;
+      font-weight: 600;
+      color: var(--black);
+      margin-bottom: 0.25rem;
+    }
+
+    .form-card-sub {
+      font-size: 0.8125rem;
+      color: var(--grey);
+      margin-bottom: 1.5rem;
+    }
+
+    /* ── FORM ── */
+    .form-group {
+      margin-bottom: 1rem;
+    }
+
+    label {
+      display: block;
+      font-size: 0.8125rem;
+      font-weight: 500;
+      color: var(--black);
+      margin-bottom: 0.35rem;
+    }
+
+    input[type="text"],
+    input[type="email"],
+    input[type="tel"],
+    select,
+    textarea {
+      width: 100%;
+      padding: 0.65rem 0.875rem;
+      border: 1px solid var(--border);
+      background: var(--white);
+      font-family: var(--font-body);
+      font-size: 0.875rem;
+      color: var(--black);
+      outline: none;
+      transition: border-color 0.15s;
+      appearance: none;
+      -webkit-appearance: none;
+      border-radius: 0;
+    }
+
+    input:focus, select:focus, textarea:focus {
+      border-color: var(--blue);
+    }
+
+    select {
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%236B7280' stroke-width='1.5' fill='none'/%3E%3C/svg%3E");
+      background-repeat: no-repeat;
+      background-position: right 0.875rem center;
+      padding-right: 2.5rem;
+    }
+
+    textarea { resize: vertical; min-height: 80px; }
+
+    .form-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0.75rem;
+    }
+
+    .file-label {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.65rem 0.875rem;
+      border: 1px dashed var(--border);
+      cursor: pointer;
+      font-size: 0.8125rem;
+      color: var(--grey);
+      transition: border-color 0.15s, color 0.15s;
+    }
+
+    .file-label:hover {
+      border-color: var(--blue);
+      color: var(--blue);
+    }
+
+    .file-label svg { flex-shrink: 0; }
+
+    input[type="file"] { display: none; }
+
+    #file-name {
+      font-size: 0.75rem;
+      color: var(--blue);
+      margin-top: 0.35rem;
+      min-height: 1rem;
+    }
+
+    .btn-submit {
+      width: 100%;
+      background: var(--blue);
+      color: var(--white);
+      border: none;
+      padding: 0.875rem;
+      font-family: var(--font-body);
+      font-size: 0.9375rem;
+      font-weight: 600;
+      letter-spacing: 0.02em;
+      cursor: pointer;
+      margin-top: 0.5rem;
+      transition: background 0.2s;
+    }
+
+    .btn-submit:hover { background: var(--blue-mid); }
+
+    .form-legal {
+      font-size: 0.7rem;
+      color: var(--grey);
+      text-align: center;
+      margin-top: 0.75rem;
+      line-height: 1.5;
+    }
+
+    /* ── TRUST BAR ── */
+    .trust-bar {
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+      background: var(--blue-light);
+      padding: 1.25rem clamp(1.5rem, 5vw, 4rem);
+    }
+
+    .trust-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 2rem 3rem;
+    }
+
+    .trust-item {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-size: 0.8125rem;
+      font-weight: 500;
+      color: var(--blue);
+    }
+
+    .trust-item svg { flex-shrink: 0; }
+
+    /* ── HOW IT WORKS ── */
+    .section {
+      padding: clamp(3rem, 8vw, 6rem) clamp(1.5rem, 5vw, 4rem);
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+
+    .section-label {
+      font-size: 0.75rem;
+      font-weight: 600;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--blue);
+      margin-bottom: 0.75rem;
+    }
+
+    .section-title {
+      font-family: var(--font-display);
+      font-size: clamp(1.5rem, 3vw, 2.25rem);
+      color: var(--black);
+      margin-bottom: 0.75rem;
+      line-height: 1.3;
+    }
+
+    .section-sub {
+      font-size: 1rem;
+      color: var(--grey);
+      max-width: 560px;
+      margin-bottom: 3rem;
+    }
+
+    .steps {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 0;
+      border: 1px solid var(--border);
+    }
+
+    .step {
+      padding: 2rem 1.75rem;
+      border-right: 1px solid var(--border);
+      position: relative;
+    }
+
+    .step:last-child { border-right: none; }
+
+    .step-number {
+      font-size: 0.6875rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      color: var(--blue);
+      text-transform: uppercase;
+      margin-bottom: 1rem;
+      opacity: 0.6;
+    }
+
+    .step-title {
+      font-size: 1rem;
+      font-weight: 600;
+      color: var(--black);
+      margin-bottom: 0.5rem;
+    }
+
+    .step-text {
+      font-size: 0.875rem;
+      color: var(--grey);
+      line-height: 1.6;
+    }
+
+    /* ── SECTORS ── */
+    .sectors-bg {
+      background: var(--blue);
+      padding: clamp(3rem, 8vw, 6rem) clamp(1.5rem, 5vw, 4rem);
+    }
+
+    .sectors-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+
+    .sectors-inner .section-label { color: rgba(255,255,255,0.55); }
+    .sectors-inner .section-title { color: var(--white); }
+    .sectors-inner .section-sub { color: rgba(255,255,255,0.65); }
+
+    .sectors-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+      gap: 1px;
+      background: rgba(255,255,255,0.12);
+      border: 1px solid rgba(255,255,255,0.12);
+    }
+
+    .sector-item {
+      background: var(--blue);
+      padding: 1.5rem 1.25rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+      transition: background 0.2s;
+    }
+
+    .sector-item:hover { background: var(--blue-mid); }
+
+    .sector-icon {
+      font-size: 1.5rem;
+      line-height: 1;
+    }
+
+    .sector-name {
+      font-size: 0.875rem;
+      font-weight: 500;
+      color: var(--white);
+    }
+
+    /* ── COUNTRIES ── */
+    .countries-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 1.5rem;
+      margin-top: 2rem;
+    }
+
+    .country-card {
+      border: 1px solid var(--border);
+      padding: 1.5rem;
+      text-align: center;
+    }
+
+    .country-flag { font-size: 2rem; margin-bottom: 0.5rem; }
+
+    .country-name {
+      font-size: 0.9375rem;
+      font-weight: 600;
+      color: var(--black);
+    }
+
+    /* ── FAQ ── */
+    .faq-list { margin-top: 2rem; border-top: 1px solid var(--border); }
+
+    details {
+      border-bottom: 1px solid var(--border);
+      padding: 1.25rem 0;
+    }
+
+    summary {
+      font-size: 0.9375rem;
+      font-weight: 600;
+      color: var(--black);
+      cursor: pointer;
+      list-style: none;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 1rem;
+    }
+
+    summary::-webkit-details-marker { display: none; }
+
+    summary::after {
+      content: "+";
+      font-size: 1.25rem;
+      color: var(--blue);
+      flex-shrink: 0;
+      transition: transform 0.2s;
+    }
+
+    details[open] summary::after {
+      content: "−";
+    }
+
+    details p {
+      font-size: 0.875rem;
+      color: var(--grey);
+      line-height: 1.7;
+      padding-top: 0.75rem;
+      max-width: 640px;
+    }
+
+    /* ── CTA FINAL ── */
+    .cta-final {
+      background: var(--blue-light);
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+      padding: clamp(3rem, 8vw, 5rem) clamp(1.5rem, 5vw, 4rem);
+      text-align: center;
+    }
+
+    .cta-final .section-title { margin-bottom: 0.75rem; }
+    .cta-final .section-sub { margin: 0 auto 2rem; }
+
+    .btn-primary {
+      display: inline-block;
+      background: var(--blue);
+      color: var(--white);
+      padding: 0.875rem 2.5rem;
+      font-family: var(--font-body);
+      font-size: 0.9375rem;
+      font-weight: 600;
+      text-decoration: none;
+      transition: background 0.2s;
+    }
+
+    .btn-primary:hover { background: var(--blue-mid); }
+
+    /* ── FOOTER ── */
+    footer {
+      padding: 2rem clamp(1.5rem, 5vw, 4rem);
+      border-top: 1px solid var(--border);
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .footer-logo {
+      font-size: 0.875rem;
+      font-weight: 600;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      color: var(--black);
+    }
+
+    .footer-logo span { color: var(--blue); }
+
+    .footer-meta {
+      font-size: 0.75rem;
+      color: var(--grey);
+    }
+
+    /* ── SUCCESS STATE ── */
+    .success-msg {
+      display: none;
+      text-align: center;
+      padding: 2rem;
+    }
+
+    .success-msg.visible { display: block; }
+
+    .success-icon {
+      font-size: 2.5rem;
+      margin-bottom: 1rem;
+    }
+
+    .success-title {
+      font-size: 1.125rem;
+      font-weight: 600;
+      color: var(--black);
+      margin-bottom: 0.5rem;
+    }
+
+    .success-text {
+      font-size: 0.875rem;
+      color: var(--grey);
+    }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 768px) {
+      .hero {
+        grid-template-columns: 1fr;
+        gap: 2.5rem;
+      }
+
+      .form-row { grid-template-columns: 1fr; }
+
+      .countries-grid { grid-template-columns: repeat(2, 1fr); }
+
+      .step { border-right: none; border-bottom: 1px solid var(--border); }
+      .step:last-child { border-bottom: none; }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      * { transition: none !important; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a href="#" class="nav-logo"><span>Orbis</span> Talent Group</a>
+  <a href="#formulario" class="nav-cta">Quiero trabajar en España</a>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-content">
+    <span class="hero-eyebrow">Agencia de colocación internacional · Sede en España</span>
+    <h1>Tu oficio tiene<br><em>demanda real</em><br>en España</h1>
+    <p class="hero-sub">
+      Conectamos trabajadores de Colombia, Perú, Ecuador y Bolivia con empresas españolas que necesitan cubrir vacantes en construcción, transporte, industria y mantenimiento. El proceso es legal y sin coste para el candidato.
+    </p>
+    <div class="hero-badges">
+      <span class="badge">Construcción</span>
+      <span class="badge">Transporte</span>
+      <span class="badge">Soldadura</span>
+      <span class="badge">Electricidad</span>
+      <span class="badge">Refrigeración</span>
+      <span class="badge">Maquinaria pesada</span>
+    </div>
+    <p class="hero-note">Proceso 100% gratuito para el candidato, como exige la ley española</p>
+  </div>
+
+  <div id="formulario" class="hero-form-card">
+    <p class="form-card-title">Registra tu perfil</p>
+    <p class="form-card-sub">Te avisamos cuando tengamos una vacante para tu oficio</p>
+
+    <form id="candidateForm">
+      <div class="form-row">
+        <div class="form-group">
+          <label for="nombre">Nombre completo *</label>
+          <input type="text" id="nombre" name="nombre" required placeholder="Tu nombre" />
+        </div>
+        <div class="form-group">
+          <label for="pais">País *</label>
+          <select id="pais" name="pais" required>
+            <option value="" disabled selected>Selecciona</option>
+            <option>Colombia</option>
+            <option>Perú</option>
+            <option>Ecuador</option>
+            <option>Bolivia</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="email">Correo electrónico *</label>
+        <input type="email" id="email" name="email" required placeholder="tu@correo.com" />
+      </div>
+
+      <div class="form-row">
+        <div class="form-group">
+          <label for="oficio">Oficio principal *</label>
+          <select id="oficio" name="oficio" required>
+            <option value="" disabled selected>Selecciona</option>
+            <option>Albañil / Maestro de obra</option>
+            <option>Electricista</option>
+            <option>Fontanero / Gasfitero</option>
+            <option>Soldador TIG/MIG</option>
+            <option>Frigorista / Climatización</option>
+            <option>Conductor de camión</option>
+            <option>Operador de maquinaria pesada</option>
+            <option>Mecánico</option>
+            <option>Otro oficio</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="experiencia">Años de experiencia *</label>
+          <select id="experiencia" name="experiencia" required>
+            <option value="" disabled selected>Selecciona</option>
+            <option>1 – 2 años</option>
+            <option>3 – 5 años</option>
+            <option>6 – 10 años</option>
+            <option>Más de 10 años</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="pasaporte">¿Tienes pasaporte vigente? *</label>
+        <select id="pasaporte" name="pasaporte" required>
+          <option value="" disabled selected>Selecciona</option>
+          <option>Sí, vigente más de 1 año</option>
+          <option>Sí, vence en menos de 1 año</option>
+          <option>No tengo pasaporte</option>
+          <option>Estoy en trámite</option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label>CV o certificados (PDF, Word — máx. 5MB)</label>
+        <label class="file-label" for="cv">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
+            <polyline points="17 8 12 3 7 8"/>
+            <line x1="12" y1="3" x2="12" y2="15"/>
+          </svg>
+          Adjuntar archivo
+        </label>
+        <input type="file" id="cv" name="cv" accept=".pdf,.doc,.docx" />
+        <div id="file-name"></div>
+      </div>
+
+      <div class="form-group">
+        <label for="mensaje">¿Algo que quieras añadir? (opcional)</label>
+        <textarea id="mensaje" name="mensaje" placeholder="Certificaciones, disponibilidad, situación actual..."></textarea>
+      </div>
+
+      <button type="submit" class="btn-submit">Enviar mi perfil →</button>
+      <p class="form-legal">Tus datos se usarán exclusivamente para el proceso de selección y no se cederán a terceros sin tu consentimiento.</p>
+    </form>
+
+    <div class="success-msg" id="successMsg">
+      <div class="success-icon">✓</div>
+      <p class="success-title">Perfil recibido</p>
+      <p class="success-text">Te contactaremos cuando tengamos una vacante que encaje con tu oficio y tu perfil. Guarda este sitio para futuras referencias.</p>
+    </div>
+  </div>
+</section>
+
+<!-- TRUST BAR -->
+<div class="trust-bar">
+  <div class="trust-inner">
+    <span class="trust-item">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+      Proceso gratuito para el candidato
+    </span>
+    <span class="trust-item">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+      Contrato firmado antes de viajar
+    </span>
+    <span class="trust-item">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+      Visado y trámites gestionados
+    </span>
+    <span class="trust-item">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+      Agencia con sede legal en España
+    </span>
+  </div>
+</div>
+
+<!-- CÓMO FUNCIONA -->
+<div class="section">
+  <p class="section-label">El proceso</p>
+  <h2 class="section-title">Cómo funciona</h2>
+  <p class="section-sub">Sin pagos por adelantado, sin intermediarios ocultos. El proceso completo está regulado por la legislación española.</p>
+
+  <div class="steps">
+    <div class="step">
+      <p class="step-number">Paso 01</p>
+      <p class="step-title">Registras tu perfil</p>
+      <p class="step-text">Rellenas el formulario con tu oficio, experiencia y documentación. Sin coste.</p>
+    </div>
+    <div class="step">
+      <p class="step-number">Paso 02</p>
+      <p class="step-title">Validamos tu perfil</p>
+      <p class="step-text">Revisamos tu documentación y te confirmamos si encajas en las vacantes activas o futuras.</p>
+    </div>
+    <div class="step">
+      <p class="step-number">Paso 03</p>
+      <p class="step-title">Te presentamos a la empresa</p>
+      <p class="step-text">Si hay una vacante para ti, coordinamos la entrevista con la empresa española.</p>
+    </div>
+    <div class="step">
+      <p class="step-number">Paso 04</p>
+      <p class="step-title">Contrato y visado</p>
+      <p class="step-text">La empresa tramita el contrato y el visado de trabajo. Tú viajas con todo en regla.</p>
+    </div>
+  </div>
+</div>
+
+<!-- SECTORES -->
+<div class="sectors-bg">
+  <div class="sectors-inner">
+    <p class="section-label">Sectores</p>
+    <h2 class="section-title">Oficios con alta demanda en España</h2>
+    <p class="section-sub">España tiene escasez real de mano de obra cualificada en estos sectores. Las empresas buscan perfiles como el tuyo.</p>
+
+    <div class="sectors-grid">
+      <div class="sector-item"><span class="sector-icon">🏗️</span><span class="sector-name">Construcción y obra</span></div>
+      <div class="sector-item"><span class="sector-icon">⚡</span><span class="sector-name">Electricidad</span></div>
+      <div class="sector-item"><span class="sector-icon">🔧</span><span class="sector-name">Fontanería</span></div>
+      <div class="sector-item"><span class="sector-icon">🔥</span><span class="sector-name">Soldadura TIG/MIG</span></div>
+      <div class="sector-item"><span class="sector-icon">❄️</span><span class="sector-name">Refrigeración y clima</span></div>
+      <div class="sector-item"><span class="sector-icon">🚛</span><span class="sector-name">Conducción de camión</span></div>
+      <div class="sector-item"><span class="sector-icon">⚙️</span><span class="sector-name">Maquinaria pesada</span></div>
+      <div class="sector-item"><span class="sector-icon">🔩</span><span class="sector-name">Mecánica industrial</span></div>
+    </div>
+  </div>
+</div>
+
+<!-- PAÍSES -->
+<div class="section">
+  <p class="section-label">Países de origen</p>
+  <h2 class="section-title">Trabajamos con candidatos de</h2>
+  <p class="section-sub">Si eres de uno de estos países y tienes un oficio con experiencia, tu perfil nos interesa.</p>
+
+  <div class="countries-grid">
+    <div class="country-card">
+      <div class="country-flag">🇨🇴</div>
+      <p class="country-name">Colombia</p>
+    </div>
+    <div class="country-card">
+      <div class="country-flag">🇵🇪</div>
+      <p class="country-name">Perú</p>
+    </div>
+    <div class="country-card">
+      <div class="country-flag">🇪🇨</div>
+      <p class="country-name">Ecuador</p>
+    </div>
+    <div class="country-card">
+      <div class="country-flag">🇧🇴</div>
+      <p class="country-name">Bolivia</p>
+    </div>
+  </div>
+</div>
+
+<!-- FAQ -->
+<div class="section" style="padding-top:0;">
+  <p class="section-label">Preguntas frecuentes</p>
+  <h2 class="section-title">Lo que más nos preguntan</h2>
+
+  <div class="faq-list">
+    <details>
+      <summary>¿El proceso realmente es gratuito para mí?</summary>
+      <p>Sí. La legislación española prohíbe que una agencia de colocación cobre al trabajador por el proceso de intermediación. Nosotros cobramos a la empresa española, nunca al candidato. Si alguien te pide dinero para conseguirte un trabajo en España, es una estafa.</p>
+    </details>
+    <details>
+      <summary>¿Voy a España antes de tener contrato?</summary>
+      <p>No. El proceso de contratación en origen significa que el contrato y el visado de trabajo se tramitan antes de que viajes. Llegas a España con todo en regla: contrato firmado, visado concedido, y puesto de trabajo esperándote.</p>
+    </details>
+    <details>
+      <summary>¿Necesito tener el pasaporte para registrarme?</summary>
+      <p>No es imprescindible para registrarte, pero sí lo necesitarás antes de iniciar el proceso de visado. Si estás en trámite o aún no lo tienes, indícalo en el formulario y te orientamos.</p>
+    </details>
+    <details>
+      <summary>¿Cuánto tiempo tarda el proceso desde que me registro?</summary>
+      <p>Depende de la vacante y del sector. Una vez que hay un puesto para tu perfil, el proceso de visado en España puede tardar entre 2 y 4 meses. Te informaremos en cada fase para que puedas planificarte.</p>
+    </details>
+    <details>
+      <summary>¿Puedo llevarme a mi familia?</summary>
+      <p>No en el proceso inicial. La autorización de trabajo se tramita para el trabajador. Una vez en España y con contrato estable, existe la reagrupación familiar, que es el proceso legal para traer al cónyuge e hijos. Te informaremos sobre ello cuando corresponda.</p>
+    </details>
+  </div>
+</div>
+
+<!-- CTA FINAL -->
+<div class="cta-final">
+  <p class="section-label">¿Listo para dar el paso?</p>
+  <h2 class="section-title">Registra tu perfil hoy</h2>
+  <p class="section-sub">No hay vacante garantizada, pero sí compromiso de avisarte cuando haya una para tu oficio.</p>
+  <a href="#formulario" class="btn-primary">Quiero registrarme →</a>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <span class="footer-logo"><span>Orbis</span> Talent Group</span>
+  <span class="footer-meta">Agencia de colocación internacional · Sevilla, España · fernando@orbistg.com</span>
+</footer>
+
+<script>
+  // File input label
+  document.getElementById('cv').addEventListener('change', function() {
+    const name = this.files[0] ? this.files[0].name : '';
+    document.getElementById('file-name').textContent = name;
+  });
+
+  // Form submission — sends to Formspree
+  document.getElementById('candidateForm').addEventListener('submit', async function(e) {
+    e.preventDefault();
+    const form = e.target;
+    const btn = form.querySelector('.btn-submit');
+    btn.textContent = 'Enviando...';
+    btn.disabled = true;
+
+    const formData = new FormData(form);
+
+    try {
+      const res = await fetch('https://formspree.io/f/TUCODIGO', {
+        method: 'POST',
+        body: formData,
+        headers: { 'Accept': 'application/json' }
+      });
+
+      if (res.ok) {
+        form.style.display = 'none';
+        document.getElementById('successMsg').classList.add('visible');
+      } else {
+        btn.textContent = 'Error al enviar. Inténtalo de nuevo.';
+        btn.disabled = false;
+      }
+    } catch {
+      btn.textContent = 'Error de conexión. Inténtalo de nuevo.';
+      btn.disabled = false;
+    }
+  });
+</script>
+
+</body>
+</html>
