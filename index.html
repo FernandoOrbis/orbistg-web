@@ -4,7 +4,9 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Orbis Talent Group — Trabaja en España con contrato real</title>
-  <meta name="description" content="Agencia de colocación internacional. Conectamos trabajadores de Colombia, Perú, Ecuador y Bolivia con empresas españolas. Sin coste para el candidato." />
+  <meta name="description" content="Agencia de colocación internacional. Conectamos trabajadores cualificados con empresas españolas que necesitan cubrir vacantes en construcción, transporte, industria y mantenimiento. Proceso legal y sin coste para el candidato." />
+  <link rel="icon" type="image/png" href="assets/favicon-32x32.png" sizes="32x32" />
+  <link rel="apple-touch-icon" href="assets/apple-touch-icon.png" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet" />
@@ -12,11 +14,11 @@
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
     :root {
-      --white:       #F8F8F6;
+      --white:       #FDFDFD;
       --black:       #111111;
-      --blue:        #1B3A6B;
-      --blue-light:  #EEF2F9;
-      --blue-mid:    #2A5298;
+      --blue:        #0A1F52;
+      --blue-light:  #EFF3FC;
+      --blue-mid:    #15347B;
       --grey:        #6B7280;
       --grey-light:  #E5E7EB;
       --border:      #D1D5DB;
@@ -585,7 +587,10 @@
 
 <!-- NAV -->
 <nav>
-  <a href="#" class="nav-logo"><span>Orbis</span> Talent Group</a>
+  <a href="#" class="nav-logo" style="display: flex; align-items: center; gap: 0.75rem;">
+    <img src="assets/logo.png" alt="Orbis Talent Group Logo" style="height: 36px; width: auto;" />
+    <span>Orbis</span> Talent Group
+  </a>
   <a href="#formulario" class="nav-cta">Quiero trabajar en España</a>
 </nav>
 
@@ -595,7 +600,7 @@
     <span class="hero-eyebrow">Agencia de colocación internacional · Sede en España</span>
     <h1>Tu oficio tiene<br><em>demanda real</em><br>en España</h1>
     <p class="hero-sub">
-      Conectamos trabajadores de Colombia, Perú, Ecuador y Bolivia con empresas españolas que necesitan cubrir vacantes en construcción, transporte, industria y mantenimiento. El proceso es legal y sin coste para el candidato.
+      Conectamos trabajadores cualificados con empresas españolas que necesitan cubrir vacantes en construcción, transporte, industria y mantenimiento. El proceso es legal, regulado y sin coste para el candidato.
     </p>
     <div class="hero-badges">
       <span class="badge">Construcción</span>
@@ -613,12 +618,9 @@
     <p class="form-card-sub">Te avisamos cuando tengamos una vacante para tu oficio</p>
 
     <form id="candidateForm">
-      <div class="form-row">
-        <div class="form-group">
-          <label for="nombre">Nombre completo *</label>
-          <input type="text" id="nombre" name="nombre" required placeholder="Tu nombre" />
-        </div>
-      
+      <div class="form-group">
+        <label for="nombre">Nombre completo *</label>
+        <input type="text" id="nombre" name="nombre" required placeholder="Tu nombre" />
       </div>
 
       <div class="form-group">
@@ -664,8 +666,6 @@
           <option>Estoy en trámite</option>
         </select>
       </div>
-
-      <div class="form-group">
 
       <div class="form-group">
         <label for="mensaje">¿Algo que quieras añadir? (opcional)</label>
@@ -756,28 +756,32 @@
   </div>
 </div>
 
-<!-- PAÍSES -->
+<!-- A QUIÉN BUSCAMOS -->
 <div class="section">
-  <p class="section-label">Países de origen</p>
-  <h2 class="section-title">Trabajamos con candidatos de</h2>
-  <p class="section-sub">Si eres de uno de estos países y tienes un oficio con experiencia, tu perfil nos interesa.</p>
+  <p class="section-label">A quién buscamos</p>
+  <h2 class="section-title">Requisitos del candidato</h2>
+  <p class="section-sub">Trabajamos con profesionales cualificados de cualquier origen que cumplan con los siguientes criterios básicos para trabajar en España.</p>
 
   <div class="countries-grid">
     <div class="country-card">
-      <div class="country-flag">🇨🇴</div>
-      <p class="country-name">Colombia</p>
+      <div class="country-flag">🛠️</div>
+      <p class="country-name">Oficio y Experiencia</p>
+      <p style="font-size: 0.8125rem; color: var(--grey); margin-top: 0.5rem; line-height: 1.4;">Experiencia demostrable en sectores industriales, construcción, transporte o mantenimiento.</p>
     </div>
     <div class="country-card">
-      <div class="country-flag">🇵🇪</div>
-      <p class="country-name">Perú</p>
+      <div class="country-flag">📜</div>
+      <p class="country-name">Documentación en Regla</p>
+      <p style="font-size: 0.8125rem; color: var(--grey); margin-top: 0.5rem; line-height: 1.4;">Pasaporte vigente y voluntad de pasar por un proceso de visado consular legal.</p>
     </div>
     <div class="country-card">
-      <div class="country-flag">🇪🇨</div>
-      <p class="country-name">Ecuador</p>
+      <div class="country-flag">✈️</div>
+      <p class="country-name">Disponibilidad</p>
+      <p style="font-size: 0.8125rem; color: var(--grey); margin-top: 0.5rem; line-height: 1.4;">Compromiso para trasladar tu residencia y comenzar una nueva vida laboral en España.</p>
     </div>
     <div class="country-card">
-      <div class="country-flag">🇧🇴</div>
-      <p class="country-name">Bolivia</p>
+      <div class="country-flag">🤝</div>
+      <p class="country-name">Proceso Gratuito</p>
+      <p style="font-size: 0.8125rem; color: var(--grey); margin-top: 0.5rem; line-height: 1.4;">Cero cobros de intermediación al trabajador, tal y como lo exige la legislación española.</p>
     </div>
   </div>
 </div>
